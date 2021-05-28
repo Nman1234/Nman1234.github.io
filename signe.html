@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title>Inscription</title>
+ </head>
+ <body>
+ 
+   <!-- Signe D'astrologie -->
+   <form>
+ 
+     <h1>Signe D'astrologie</h1>
+ 
+     <!-- textbox pour le moi de naissance -->
+     <input type="input" id="txtMois" placeholder="Example: Janvier">
+     <br></br>
+    
+     <input type="input" id="txtJour" placeholder="Example: 23">
+     <br></br>
+    
+     <!-- bouton pour soumettre le formulaire -->
+     <input type="button" id="btnInitial" onclick="afficheResultats()"  value="Resultats">
+     <br></br>
+     <!-- Création d'une section pour l'affichage des résultats -->
+     <div id="divAffiche">
+ 
+     </div>
+
+     <script>
+
+     function afficheResultats() {
+     //Chercher les données dans le formulaire
+     var month = document.getElementById("txtMois").value;
+    var day = document.getElementById("txtJour").value;
+
+switch (true) {
+  case ((month == "Mars" && day >= 21) || (month == "Avril" && day <=19)):
+ var message = ("Bélier");
+  break;
+ 
+  case ((month == "Avril" && day >= 20) || (month == "Mai" && day <=20)):
+ var message = ("Taureau");
+  break;
+ 
+  case ((month == "Mai" && day >= 21) || (month == "Juin" && day <=21)):
+var message = ("Gémeaux");
+  break;
+ 
+  case ((month == "Juin" && day >= 22) || (month == "Juillet" && day <=22)):
+ var message = ("Cancer");
+  break;
+ 
+  case ((month == "Juillet" && day >= 23) || (month == "Août" && day <=22)):
+ var message = ("Lion");
+  break;
+ 
+  case ((month == "Août" && day >= 23) || (month == "Septembre" && day <=22)):
+ var message = ("Vierge");
+  break;
+ 
+  case ((month == "Septembre" && day >= 23) || (month == "Octobre" && day <=23)):
+ var message = ("Balance");
+  break;
+ 
+  case ((month == "Octobre" && day >= 24) || (month == "November" && day <=21)):
+ var message = ("Scorpion");
+  break;
+ 
+  case ((month == "November" && day >= 22) || (month == "Décembre" && day <=21)):
+ var message = ("Sagittaire");
+  break;
+ 
+  case ((month == "Décembre" && day >= 22) || (month == "Janvier" && day <=19)):
+ var message = ("Capricorne");
+  break;
+ 
+  case ((month == "Janvier" && day >= 20) || (month == "Février" && day <=18)):
+ var message = ("Verseau");
+  break;
+ 
+  case ((month == "Février" && day >= 19) || (month == "Mars" && day <=20)):
+ var message = ("Poissons");
+}
+
+var affiche = document.getElementById("divAffiche");
+
+affiche.innerHTML = message;
+ 
+}
+
+
+    </script>
+ 
+   </form>
+ 
+ </body>
+</html>
