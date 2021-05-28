@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title>Inscription</title>
+ </head>
+ <body>
+ 
+   <!-- Formulaire d'inscription -->
+   <form>
+ 
+     <h1>Afficheur de nom</h1>
+ 
+     <!-- textbox pour le nom de l'élève -->
+     <label for="txtNom">Nom:</label>
+     <input type="text" id="txtNom">
+     <br><br>
+
+     <!-- textbox pour le nom de millieu -->
+     <label for="txtMid">Nom du milleu:</label>
+     <input type="text" id="txtMid">
+     <br><br>
+
+     <!-- textbox pour le dernier nom -->
+     <label for="txtLast">Nom:</label>
+     <input type="text" id="txtLast">
+     <br><br>
+ 
+ 
+ 
+ 
+     <!-- bouton pour soumettre le formulaire -->
+     <input type="button" id="btnInitial" onclick="afficheInitial()"  value="Initiales">
+     
+
+     <!-- bouton pour soumettre le formulaire -->
+     <input type="button" id="btnComplet" onclick="afficheComplet()"  value="Nom au Complet">
+
+     <!-- bouton pour soumettre le formulaire -->
+     <input type="button" id="btnUtilusateur" onclick="afficheLast()"  value="Nom d'utilusateur">
+ 
+     <!-- Création d'une section pour l'affichage des résultats -->
+     <div id="divAffiche">
+ 
+     </div>
+ 
+     <script>
+         function afficheInitial() {
+             //Chercher les données dans le formulaire
+             var prenom = document.getElementById("txtNom").value;
+             var millieu = document.getElementById("txtMid").value;
+             var last = document.getElementById("txtLast").value;
+
+            var prenom = prenom.charAt(0).toUpperCase()
+            var millieu = millieu.charAt(0).toUpperCase()
+            var last = last.charAt(0).toUpperCase()
+
+            var affiche = document.getElementById("divAffiche");
+             
+             //Construire le message à afficher
+             var message = prenom + "." + millieu + "." + last;
+ 
+             //Afficher le message sur la page web
+             affiche.innerHTML = message;
+         }
+
+         function afficheComplet() {
+             //Chercher les données dans le formulaire
+             var prenom = document.getElementById("txtNom").value;
+             var millieu = document.getElementById("txtMid").value;
+             var last = document.getElementById("txtLast").value;
+             
+             var affiche = document.getElementById("divAffiche");
+             
+             //Construire le message à afficher
+             var message = prenom.charAt(0).toUpperCase() + prenom.slice(1) + " " + millieu.charAt(0).toUpperCase() + millieu.slice(1) + " " + last.charAt(0).toUpperCase() + last.slice(1) + " ";
+ 
+             //Afficher le message sur la page web
+             affiche.innerHTML = message;
+         }
+
+         function afficheLast() {
+             //Chercher les données dans le formulaire
+             var prenom = document.getElementById("txtNom").value;
+             var millieu = document.getElementById("txtMid").value;
+             var last = document.getElementById("txtLast").value;
+
+             var prenom = prenom.charAt(0).toLowerCase()
+             var millieu = millieu.charAt(0).toLowerCase()
+             var last = last.toLowerCase()
+
+             var affiche = document.getElementById("divAffiche");
+             
+             //Construire le message à afficher
+             var message = prenom + millieu +last ;
+ 
+             //Afficher le message sur la page web
+             affiche.innerHTML = message;
+         }
+     </script>
+ 
+   </form>
+ 
+ </body>
+</html>
